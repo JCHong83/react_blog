@@ -17,7 +17,7 @@ const PostListPage = () => {
         <div>
           <PostList />
         </div>
-        <div className={`${open ? "block" : "hidden"}`}>
+        <div className={`${open ? "block" : "hidden"} md:block`}>
           <SideMenu />
         </div>
       </div>
