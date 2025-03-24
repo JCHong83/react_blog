@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchPosts = async () => {
-  const res = axios.get(`${import.meta.env.VITE_API_URL}/posts`);
+  const res = await axios.get(`${import.meta.env.VITE_API_URL}/posts`);
   return res.data;
 };
 
@@ -11,7 +11,7 @@ const PostList = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ['repoData'],
-    queryFn: () => fetchPosts,
+    queryFn: () => fetchPosts(),
   });
 
   if (isPending) return 'Loading...';
